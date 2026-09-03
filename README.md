@@ -31,3 +31,7 @@ en git bash para poder subir cosas al repo desde la terminal de visual:
 "git commit -m "comentario de que hicieron en este commit" " 
 "git pull" para actualizar estado de los archivos desde el repositorio (IMPORTANTE SIEMPRE REALIZARLO PARA EVITAR CONFLICTOS DE ARCHIVOS O DE VERSIONES)
 "git push" para subir cambios 
+
+CONSEJO: 
+instalen git graph en visual, así ven los cambios relevantes para el proyecto
+![alt text](image.png)
