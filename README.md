@@ -1,6 +1,6 @@
 # Compilers_Repository
 trabajo continuo de compiladores 
-03/09/2026
+03/09/2026 \n
 En esta primera actualización estaremos trabajando esencialmente la primer entrega de nuestro compilador, donde se busca dividir trabajos en cuento a que es lo que se estará realizando, subir documentación, presentaciones y nuestra máquina de estados como tal. 
 Para ello se dividió en los roles siguientes: 
 -Vilchis-> PM 
