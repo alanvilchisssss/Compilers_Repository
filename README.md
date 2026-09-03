@@ -34,4 +34,3 @@ en git bash para poder subir cosas al repo desde la terminal de visual:
 
 CONSEJO: 
 instalen git graph en visual, así ven los cambios relevantes para el proyecto
-![alt text](image.png)
