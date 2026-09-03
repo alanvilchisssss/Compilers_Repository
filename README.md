@@ -18,6 +18,7 @@ Presenter           |    Brandon    | Alan
 machine Desing      |    Tao        | Brandon
 Document validation |    Alan Hrdz  | Tao
 De esta forma podremos respaldar y realizar equipos de trabajo para poder tener una cadena de "producción" y validación de fases. 
+Cada persona suba lo pertinente a su carpeta correspondiente.
 (comentario para el equipo)
 El chiste de esto es poder respaldarse en la persona que esta al lado suyo, pregunten y cualquier cosa que no tenga solución que se comunique lo antes posible. 
 reglas para el repositorio (breve recordatorio)
