@@ -10,7 +10,7 @@ Para ello se dividió en los roles siguientes:     <br>
 -Alan Hernández-> Elaboración de documentos<br>
 Por medio de esta división de roles, estarmoes subiendo al repositorio cambios con respecto a cada área. <br>
 Para estar seguros de que todos estemos trabajando, se asignarán roles secundarios al equipo, en donde estén verificando constantemente al otro miembro del equipo. Los roles secundarios quedarán de la siguiente forma: <br>
-                    |     Principal |  Secundario<br>
+```                    |     Principal |  Secundario<br>
 Rol<br>             |               |
 PM                  |    Vilchis    | Alan Hrdz<br>
 Developer           |    David      | Vilchis<br>
