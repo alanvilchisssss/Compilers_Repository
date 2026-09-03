@@ -1,11 +1,11 @@
 # Compilers_Repository
 trabajo continuo de compiladores 
 03/09/2026 \n
-En esta primera actualización estaremos trabajando esencialmente la primer entrega de nuestro compilador, donde se busca dividir trabajos en cuento a que es lo que se estará realizando, subir documentación, presentaciones y nuestra máquina de estados como tal. 
-Para ello se dividió en los roles siguientes: 
--Vilchis-> PM 
--David-> Desarrollador
--Tao-> análisis de la máquina de estados
+En esta primera actualización estaremos trabajando esencialmente la primer entrega de nuestro compilador, donde se busca dividir trabajos en cuento a que es lo que se estará realizando, subir documentación, presentaciones y nuestra máquina de estados como tal.<br>
+Para ello se dividió en los roles siguientes:     <br>
+-Vilchis-> PM     <br>
+-David-> Desarrollador<br>
+-Tao-> análisis de la máquina de estados<br>
 -Brandon-> Presentador general. 
 -Alan Hernández-> Elaboración de documentos
 Por medio de esta división de roles, estarmoes subiendo al repositorio cambios con respecto a cada área. 
