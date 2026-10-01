@@ -1,3 +1,4 @@
+import re
 #funciones a realizar 
 #1. Lectura de cadena de texto / archivo 
 def cadena_input():
@@ -23,11 +24,11 @@ def cadena_input():
 def identificar_tokens(cadena):
     tokens= {
         #keyword identifier operator constant punctuation
-        'keyword':['if', 'else', 'while', 'for', 'return'],
-        'identifier':[],
-        'operator':['+', '-', '*', '/', '=', '==', '!=', '<', '>', '<=', '>='],
-        'constant':[],
-        'punctuation':['(', ')', '{', '}', '[', ']', ';', ',']
+        'keyword':[r'if|else|while|for|return|printf'],
+        'identifier':[r'[a-zA-Z_][a-zA-Z0-9_]*'],
+        'operator':[r'\+|\-|\*|\/|\=|\==|\!=|\<|\>|\<=|\>='],#'+', '-', '*', '/', '=', '==', '!=', '<', '>', '<=', '>='],
+        'constant':[r'\d+'],
+        'punctuation':[r'\(|\)|\{|\}|\[|\]|\;|\,|\"|\'']#'(', ')', '{', '}', '[', ']', ';', ',']
     }
     tokens_encontrados= {
         'keyword':[],
@@ -38,25 +39,31 @@ def identificar_tokens(cadena):
         'no_reconocido':[]
     }
     cadenas_encontradas= cadena.split()
+    N_tokens=0
     for token in cadenas_encontradas:
-        if token in tokens['keyword']:
+        if re.match('|'.join(tokens['keyword']), token):
             tokens_encontrados['keyword'].append(token)
-        elif token.isidentifier():
+            N_tokens+=1
+        elif re.match('|'.join(tokens['identifier']), token):
             tokens_encontrados['identifier'].append(token)
-        elif token in tokens['operator']:
+            N_tokens+=1
+        elif re.match('|'.join(tokens['operator']), token):
             tokens_encontrados['operator'].append(token)
-        elif token.isdigit():
+            N_tokens+=1
+        elif re.match('|'.join(tokens['constant']), token):
             tokens_encontrados['constant'].append(token)
-        elif token in tokens['punctuation']:
+            N_tokens+=1
+        elif re.match('|'.join(tokens['punctuation']), token):
             tokens_encontrados['punctuation'].append(token)
+            N_tokens+=1
         else:
             print(f"Token no reconocido: {token}")
             tokens_encontrados['no_reconocido'].append(token)
+    print(f"Total de tokens encontrados: {N_tokens}")
     return tokens_encontrados
 #3. 
 
 def main(): 
-    N_tokens=0
     cadena= cadena_input()
     tokens= identificar_tokens(cadena)
     print("Cadena ingresada:", cadena)
@@ -65,9 +72,7 @@ def main():
     for tipo, lista in tokens.items():
         if lista:
             print(f"{tipo}: {', '.join(lista)}")
-            N_tokens += len(lista)
     print("--------------------------------")
-    print("Cantidad de tokens encontrados:", N_tokens)
 
 if __name__ == "__main__": 
     main()
