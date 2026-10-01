@@ -1,2 +1,1 @@
-hola esta es una prueba */*/*/ retoijwekm woekrkmweoij gweormlks
 printf("this is an example");

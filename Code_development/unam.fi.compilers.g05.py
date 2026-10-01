@@ -38,7 +38,7 @@ def identificar_tokens(cadena):
         'punctuation':[],
         'no_reconocido':[]
     }
-    cadenas_encontradas= cadena.split()
+    cadenas_encontradas= re.findall(r'\w+|[^\s\w]', cadena)
     N_tokens=0
     for token in cadenas_encontradas:
         if re.match('|'.join(tokens['keyword']), token):
@@ -59,19 +59,19 @@ def identificar_tokens(cadena):
         else:
             print(f"Token no reconocido: {token}")
             tokens_encontrados['no_reconocido'].append(token)
-    print(f"Total de tokens encontrados: {N_tokens}")
-    return tokens_encontrados
+    return tokens_encontrados, N_tokens
 #3. 
 
 def main(): 
     cadena= cadena_input()
-    tokens= identificar_tokens(cadena)
+    tokens, N_tokens= identificar_tokens(cadena)
     print("Cadena ingresada:", cadena)
     print("--------------------------------")
     print("Tokens encontrados:")
     for tipo, lista in tokens.items():
         if lista:
             print(f"{tipo}: {', '.join(lista)}")
+    print(f"Total de tokens encontrados: {N_tokens}")
     print("--------------------------------")
 
 if __name__ == "__main__": 
