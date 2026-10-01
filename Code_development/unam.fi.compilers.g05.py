@@ -20,11 +20,54 @@ def cadena_input():
     return cadena
 
 #2. Identificación de tokens 
+def identificar_tokens(cadena):
+    tokens= {
+        #keyword identifier operator constant punctuation
+        'keyword':['if', 'else', 'while', 'for', 'return'],
+        'identifier':[],
+        'operator':['+', '-', '*', '/', '=', '==', '!=', '<', '>', '<=', '>='],
+        'constant':[],
+        'punctuation':['(', ')', '{', '}', '[', ']', ';', ',']
+    }
+    tokens_encontrados= {
+        'keyword':[],
+        'identifier':[],
+        'operator':[],
+        'constant':[],
+        'punctuation':[],
+        'no_reconocido':[]
+    }
+    cadenas_encontradas= cadena.split()
+    for token in cadenas_encontradas:
+        if token in tokens['keyword']:
+            tokens_encontrados['keyword'].append(token)
+        elif token.isidentifier():
+            tokens_encontrados['identifier'].append(token)
+        elif token in tokens['operator']:
+            tokens_encontrados['operator'].append(token)
+        elif token.isdigit():
+            tokens_encontrados['constant'].append(token)
+        elif token in tokens['punctuation']:
+            tokens_encontrados['punctuation'].append(token)
+        else:
+            print(f"Token no reconocido: {token}")
+            tokens_encontrados['no_reconocido'].append(token)
+    return tokens_encontrados
 #3. 
 
 def main(): 
+    N_tokens=0
     cadena= cadena_input()
-    #print("Cadena ingresada:", cadena)
+    tokens= identificar_tokens(cadena)
+    print("Cadena ingresada:", cadena)
+    print("--------------------------------")
+    print("Tokens encontrados:")
+    for tipo, lista in tokens.items():
+        if lista:
+            print(f"{tipo}: {', '.join(lista)}")
+            N_tokens += len(lista)
+    print("--------------------------------")
+    print("Cantidad de tokens encontrados:", N_tokens)
 
 if __name__ == "__main__": 
     main()
