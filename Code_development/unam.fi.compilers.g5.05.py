@@ -24,8 +24,8 @@ def cadena_input():
 def identificar_tokens(cadena):
     tokens= {
         #keyword identifier operator constant punctuation
-        'keyword':[r'if|else|while|for|return|printf'],
-        'identifier':[r'[a-zA-Z_][a-zA-Z0-9_]*'],
+        'keyword':[r'if|else|while|for|return|printf|int|print'],
+        'identifier':[r'[a-zA-Z_][a-zA-Z0-9_]*|[$]+[a-zA-Z_][a-zA-Z0-9_]*'],
         'operator':[r'\+|\-|\*|\/|\=|\==|\!=|\<|\>|\<=|\>='],#'+', '-', '*', '/', '=', '==', '!=', '<', '>', '<=', '>='],
         'constant':[r'\d+'],
         'punctuation':[r'\(|\)|\{|\}|\[|\]|\;|\,|\"|\'']#'(', ')', '{', '}', '[', ']', ';', ',']
@@ -38,6 +38,7 @@ def identificar_tokens(cadena):
         'punctuation':[],
         'no_reconocido':[]
     }
+    
     cadenas_encontradas= re.findall(r'\w+|[^\s\w]', cadena)
     N_tokens=0
     for token in cadenas_encontradas:
@@ -58,7 +59,7 @@ def identificar_tokens(cadena):
             N_tokens+=1
         else:
             print(f"Token no reconocido: {token}")
-            tokens_encontrados['no_reconocido'].append(token)
+            #tokens_encontrados['no_reconocido'].append(token)
     return tokens_encontrados, N_tokens
 #3. 
 

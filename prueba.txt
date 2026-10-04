@@ -1,1 +1,2 @@
-printf("this is an example");
+printf("hola mundo");
+int a=10;
