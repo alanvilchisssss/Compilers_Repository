@@ -24,7 +24,7 @@ def cadena_input():
 def identificar_tokens(cadena):
     tokens= {
         #keyword identifier operator constant punctuation
-        'keyword':[r'if|else|while|for|return|1'],
+        'keyword':[r'if|else|while|for|return|printf'],
         'identifier':[r'[a-zA-Z_][a-zA-Z0-9_]*'],
         'operator':[r'\+|\-|\*|\/|\=|\==|\!=|\<|\>|\<=|\>='],#'+', '-', '*', '/', '=', '==', '!=', '<', '>', '<=', '>='],
         'constant':[r'\d+'],
