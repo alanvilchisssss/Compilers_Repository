@@ -24,12 +24,9 @@ def cadena_input():
 def identificar_tokens(cadena):
     tokens= {
         #keyword identifier operator constant punctuation
-        # Se tienen 40 tokens base entre keywords, operadores y punctuation.
         'keyword':[r'print|printf|int|float|char|void|if|else|while|for|return|break|continue|switch|case'],
         'identifier':[r'[a-zA-Z_][a-zA-Z0-9_]*'],
-        # Los operadores de mas de un caracter se reconocen completos.
         'operator':[r'\+|\-|\*|\/|\%|\=|\=\=|\!\=|\<|\>|\<\=|\>\=|\&\&|\|\||\!'],
-        # Se agregaron constantes reales, cadenas y caracteres, ademas de enteros.
         'constant':[r'\d+\.\d+', r'\d+', r'"(?:\\.|[^"\\])*"', r"'(?:\\.|[^'\\])*'"],
         'punctuation':[r'\(|\)|\{|\}|\[|\]|\;|\,|\.|\:|\?']
     }
@@ -63,7 +60,6 @@ def identificar_tokens(cadena):
     N_tokens=0
 
     for token in cadenas_encontradas:
-        # Los comentarios no se consideran tokens.
         if token.startswith('//') or token.startswith('/*'):
             continue
 
