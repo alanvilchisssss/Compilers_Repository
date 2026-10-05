@@ -34,3 +34,9 @@ en git bash para poder subir cosas al repo desde la terminal de visual:
 
 CONSEJO: 
 instalen git graph en visual, así ven los cambios relevantes para el proyecto
+INSTRUCCIONES PARA USAR GITHUB
+git checkout -b "VERSION_CODIGO_NOMBRE_PERSONA_TRABAJANDO_EN_EL"
+git pull
+git add .
+git commit -m "lo que vayas a comentar" 
+git push
