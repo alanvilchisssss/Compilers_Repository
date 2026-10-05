@@ -1,0 +1,3 @@
+print printf int float char void if else while for return break continue switch case
++ - * / % = == != < > <= >= && || !
+( ) { } [ ] ; , . :
