@@ -38,7 +38,20 @@ def identificar_tokens(cadena):
         'punctuation':[],
         'no_reconocido':[]
     }
-    cadenas_encontradas= re.findall(r'\w+|[^\s\w]', cadena)
+    patron_lexer = (
+            r'//[^\n]*'                                  # comentario de una linea
+            r'|/\*[\s\S]*?\*/'                           # comentario de varias lineas
+            r'|"(?:\\.|[^"\\])*"'                        # cadena de texto
+            r"|\'(?:\\.|[^\'\\])*\'"                     # caracter
+            r'|\d+\.\d+'                                 # constante real
+            r'|\d+'                                      # constante entera
+            r'|[a-zA-Z_][a-zA-Z0-9_]*'                   # identificador o keyword
+            r'|\=\=|\!\=|\<\=|\>\='                     # operadores de dos caracteres
+            r'|\+|\-|\*|\/|\%|\=|\<|\>|\&\&|\|\||\!'   # operadores de un caracter
+            r'|\(|\)|\{|\}|\[|\]|\;|\,|\.|\:|\?'        # punctuation
+            r'|\S'                                       # cualquier otro caracter
+        )
+    cadenas_encontradas= re.findall(patron_lexer, cadena)
     N_tokens=0
     for token in cadenas_encontradas:
         if re.match('|'.join(tokens['keyword']), token):
