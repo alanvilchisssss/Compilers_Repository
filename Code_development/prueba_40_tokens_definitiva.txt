@@ -1,0 +1,10 @@
+// Prueba del analizador léxico: 40 tokens
+int a = 10;
+float b = 30.5;
+if (a <= b) {
+    print("ok");
+}
+return a;
+printf("This is an example");
+x = a + b;
+char c;
