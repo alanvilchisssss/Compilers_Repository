@@ -24,11 +24,11 @@ def cadena_input():
 def identificar_tokens(cadena):
     tokens= {
         #keyword identifier operator constant punctuation
-        'keyword':[r'if|else|while|for|return|printf|print|int'],
+        'keyword':[r'print|printf|int|float|char|void|if|else|while|for|return|break|continue|switch|case'],
         'identifier':[r'[a-zA-Z_][a-zA-Z0-9_]*'],
-        'operator':[r'\+|\-|\*|\/|\=|\==|\!=|\<|\>|\<=|\>='],#'+', '-', '*', '/', '=', '==', '!=', '<', '>', '<=', '>='],
-        'constant':[r'\d+'],
-        'punctuation':[r'\(|\)|\{|\}|\[|\]|\;|\,|\"|\'']#'(', ')', '{', '}', '[', ']', ';', ',']
+        'operator':[r'\+|\-|\*|\/|\%|\=|\=\=|\!\=|\<|\>|\<\=|\>\=|\&\&|\|\||\!'],
+        'constant':[r'\d+\.\d+', r'\d+', r'"(?:\\.|[^"\\])*"', r"'(?:\\.|[^'\\])*'"],
+        'punctuation':[r'\(|\)|\{|\}|\[|\]|\;|\,|\.|\:|\?']
     }
     tokens_encontrados= {
         'keyword':[],
