@@ -41,3 +41,5 @@ git add .
 git commit -m "lo que vayas a comentar" 
 git push origin "VERSION_CODIGO_NOMBRE_PERSONA_TRABAJANDO_EN_EL"
 Desde github tendrán que crear un pull request para que yo se los acepte como válido y hacer el merge con la rama principal
+
+IMPORTANTE: PARA DESCARGAR EL PDF DEL REPORTE ------> ACTIONS ----> última opción compilada correctamente----> Descargar zip
