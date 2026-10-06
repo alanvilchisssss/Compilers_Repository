@@ -1,9 +1,12 @@
-name: Compilar LaTeX
+name: Compilar Reporte LaTeX
 
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:    
+    paths:
+      - 'Documentation/Reporte#1/**'
+  workflow_dispatch:
+
 jobs:
   build_pdf:
     runs-on: ubuntu-latest
@@ -11,13 +14,14 @@ jobs:
       - name: Clonar repositorio
         uses: actions/checkout@v4
 
-      - name: Compilar documento
+      - name: Compilar documento LaTeX
         uses: xu-cheng/latex-action@v3
         with:
           root_file: Compilers_Proyect_Report.tex
+          working_directory: 'Documentation/Reporte#1'
 
-      - name: Guardar PDF generado
+      - name: Subir PDF generado como artefacto
         uses: actions/upload-artifact@v4
         with:
-          name: documento-pdf
-          path: Compilers_Proyect_Report.pdf     
+          name: Compilers_Proyect_Report
+          path: 'Documentation/Reporte#1/Compilers_Proyect_Report.pdf'
