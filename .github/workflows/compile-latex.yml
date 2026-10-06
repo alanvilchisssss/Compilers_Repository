@@ -1,0 +1,24 @@
+name: Compilar LaTeX
+
+on:
+  push:
+    branches: [ "main" ] # Cambia a master si esa es tu rama principal
+  workflow_dispatch:      # Permite compilar manualmente desde la web
+
+jobs:
+  build_pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Compilar documento
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex # Reemplaza con el nombre de tu archivo .tex principal
+
+      - name: Guardar PDF generado
+        uses: actions/upload-artifact@v4
+        with:
+          name: documento-pdf
+          path: main.pdf     # Nombre del PDF resultante
