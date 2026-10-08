@@ -102,7 +102,7 @@
 \subsection{Problem statement}
 A compiler translates programs written in a high-level language into low-level code that a machine can run. The first step of this process is the lexical analysis. In this step, the program reads the source code as a long list of characters and turns it into a list of small units with meaning, called \textit{tokens}.
 
-In this project we had to design and build a lexical analyzer (\textit{lexer}) for a small part of a C/C++ style language. We were not allowed to use automatic tools like FLEX. The lexer has to read text typed in the console and also plain text files. It must classify each token in the correct category (keywords, including the token \texttt{print}, identifiers, constants, operators and punctuation). It also has to ignore single-line and multi-line comments. To check that it works, we had to run a test with at least 40 tokens. Finally, we had to prepare the theory for the next phase, the syntax analysis. For this, we wrote a Context-Free Grammar (CFG) and applied the \textit{Left Factoring} technique to it.
+In this project we had to design and build a lexical analyzer (\textit{lexer}) for a small part of a python style language. We were not allowed to use automatic tools like FLEX. The lexer has to read text typed in the console and also plain text files. It must classify each token in the correct category (keywords, including the token \texttt{print}, identifiers, constants, operators and punctuation). It also has to ignore single-line and multi-line comments. To check that it works, we had to run a test with at least 40 tokens. Finally, we had to prepare the theory for the next phase, the syntax analysis. For this, we wrote a Context-Free Grammar (CFG) and applied the \textit{Left Factoring} technique to it.
 
 \subsection{Motivation}
 Keeping the lexical analysis separate from the syntax analysis is a basic idea in compiler design~\cite{10.5555/576122}. If the parser had to read the source code character by character, the grammar would be much harder to design and the program would be slower. When the lexer works as a separate part:
@@ -120,7 +120,6 @@ To build a modular lexical analyzer inside the package \texttt{unam.fi.compilers
 \begin{itemize}
     \item Add two ways to read the input: text typed in the console and text files with the \texttt{.txt} extension.
     \item Write regular expressions to find keywords (\texttt{keyword}), identifiers (\texttt{identifier}), operators (\texttt{operator}), numbers and text literals (\texttt{constant}) and delimiters (\texttt{punctuation}).
-    \item Remove single-line comments (\texttt{//...}) and block comments (\texttt{/*...*/}) without changing the valid tokens.
     \item Propose a Context-Free Grammar for some statements of the language and apply left factoring to remove the problem of common prefixes.
 \end{itemize}
 
