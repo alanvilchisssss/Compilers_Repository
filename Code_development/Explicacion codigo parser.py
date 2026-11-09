@@ -40,13 +40,13 @@ def cadena_input():
 
 # =========================================================================================
 # BLOQUE 2: ANALIZADOR LÉXICO / LEXER (identificar_tokens)
-# 💡 ANALOGÍA: Es una máquina clasificadora de monedas. Recibe todo el texto revuelto,
+# ANALOGÍA: Es una máquina clasificadora de monedas. Recibe todo el texto revuelto,
 #    tira a la basura la tierra (los comentarios // y /* */), y separa cada pieza poniéndole
 #    su etiqueta ('keyword', 'identifier', 'operator', 'constant', 'punctuation')
 #    y anotando en qué renglón (línea) venía.
 # =========================================================================================
 def identificar_tokens(cadena):
-    # 🧠 NEMOTECNIA DE SÍMBOLOS REGEX (Por si pregunta el profe):
+    #  NEMOTECNIA DE SÍMBOLOS REGEX (Por si pregunta el profe):
     #   ^  = "Que empiece exactamente aquí"
     #   $  = "Que termine exactamente aquí" (Ponemos ^ y $ para que la variable 'int_num' NO la confunda con 'int')
     #   \d = Cualquier dígito del 0 al 9 (d de digit)
@@ -70,7 +70,7 @@ def identificar_tokens(cadena):
         'no_reconocido': []
     }
 
-    # ⚠️ POR QUÉ EL ORDEN DE ESTE PATRÓN ES VITAL (Conclusión 1 de nuestro reporte):
+    # POR QUÉ EL ORDEN DE ESTE PATRÓN ES VITAL (Conclusión 1 de nuestro reporte):
     # Siempre ponemos PRIMERO las cosas largas y DESPUÉS las cortas.
     # Ejemplo: Ponemos '==' y '<=' ANTES que '=' y '<'. Si pusiéramos '=' primero,
     # al ver '<=' lo partiría en dos pedazos ('<' y '=') en vez de leerlo junto.
@@ -88,7 +88,7 @@ def identificar_tokens(cadena):
         r'|\S'                    # 11. Cualquier símbolo raro que no sea espacio (para atrapar errores como @ o #)
     )
 
-    # 🔥 LO NUEVO QUE AGREGAMOS PARA CONECTAR CON EL PARSER:
+    # LO NUEVO QUE AGREGAMOS PARA CONECTAR CON EL PARSER:
     # En la Entrega 1 solo teníamos el diccionario 'tokens_encontrados', pero ese diccionario
     # desordena el código porque mete todos los keywords juntos y todos los signos juntos.
     # Por eso creamos 'lista_tokens': una fila india donde cada token guarda su orden exacto y su renglón.
@@ -336,7 +336,7 @@ def analizar_sintaxis_parser(lista_tokens):
 
 # =========================================================================================
 # FUNCIÓN AUXILIAR: deducir_tipo_constante
-# 💡 ANALOGÍA: Es una lupa que mira una constante y nos dice qué tipo de dato es en realidad.
+#  ANALOGÍA: Es una lupa que mira una constante y nos dice qué tipo de dato es en realidad.
 #    Porque para el Lexer, tanto 10 como 30.5 como "Hola" se llaman simplemente 'constant'.
 #    Aquí las distinguimos fijándonos en cómo están escritas:
 #    - ¿Tiene comillas dobles "..."? -> Es un 'string'

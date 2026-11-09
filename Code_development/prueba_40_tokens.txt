@@ -1,0 +1,23 @@
+// ====================================================================
+// GUIA RAPIDA PARA LA EXPOSICION (ESCENARIOS DE PRUEBA):
+//
+// 1. Escenario Exitoso (Parsing Success! + SDT Verified!):
+//    Corre este archivo tal como esta.
+//
+// 2. Escenario Error Sintactico (Parsing error... + SDT error...):
+//    Borra el ';' de la linea 'int a;' o ingresa en consola: int x = ;
+//
+// 3. Escenario Error Semantico (Parsing Success! + SDT error...):
+//    Cambia el 10 de 'int x = 10;' por 30.5 o por "hola".
+// ====================================================================
+
+int a;
+int x = 10;
+int copia = x;
+float promedio = 30.5;
+char letra = 'A';
+
+printf("This is an example");
+printf("El valor de x es: ", x);
+printf("El promedio final es: ", promedio);
+print("Fin de la prueba con exito", letra);
