@@ -98,6 +98,7 @@ def identificar_tokens(cadena):
 
     return tokens_encontrados, N_tokens, lista_tokens
 
+##hasta aquí fue la entrega anterior
 
 def analizar_sintaxis_parser(lista_tokens):
     if len(lista_tokens) == 0:

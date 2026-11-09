@@ -1,3 +1,10 @@
-print printf int float char void if else while for return break continue switch case
-+ - * / % = == != < > <= >= && || !
-( ) { } [ ] ; , . :
+int a=50.5;
+int x = 10;
+int copia = x;
+float promedio = 30.5;
+char letra = 'A';
+
+printf("This is an example");
+printf("El valor de x es: ", x);
+printf("El promedio final es: ", promedio);
+print("Fin de la prueba con exito", letra);

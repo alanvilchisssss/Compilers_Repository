@@ -10,8 +10,7 @@
 // 3. Escenario Error Semantico (Parsing Success! + SDT error...):
 //    Cambiamos el 10 de 'int x = 10;' por 30.5 o por "hola".
 // ====================================================================
-
-int a;
+int a=0;
 int x = 10;
 int copia = x;
 float promedio = 30.5;
