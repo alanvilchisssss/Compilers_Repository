@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Compilers_Proyect_Report
-          path: 'Documentation/Reporte#2/Compilers_Proyect_Report.pdf'
+          path: 'Documentation/Reporte#2/unam.gp5.pdf'
