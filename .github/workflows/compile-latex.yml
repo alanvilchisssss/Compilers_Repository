@@ -17,11 +17,11 @@ jobs:
       - name: Compilar documento LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: Compilers_Proyect_Report.tex
+          root_file: unam.gp5.tex
           working_directory: 'Documentation/Reporte#2'
 
       - name: Subir PDF generado como artefacto
         uses: actions/upload-artifact@v4
         with:
-          name: Compilers_Proyect_Report
+          name: unam.gp5
           path: 'Documentation/Reporte#2/unam.gp5.pdf'
